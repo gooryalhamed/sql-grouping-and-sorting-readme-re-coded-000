@@ -175,10 +175,9 @@ Let's calculate the sum of the net worth of all of the cats that belong to our s
 
 ```sql
 SELECT SUM(Cats.net_worth) 
-FROM Owners 
-INNER JOIN cats_owners 
-ON Owners.id = cats_owners.owner_id 
-JOIN Cats ON cats_owners.cat_id = Cats.id 
+FROM cats
+INNER JOIN Cats
+ON cats_owners.cat_id = Cats.id 
 WHERE cats_owners.owner_id = 2;
 ```
 
